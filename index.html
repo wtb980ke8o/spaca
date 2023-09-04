@@ -162,10 +162,10 @@
         <div id="layout">
             <label for="widePipeThickness">钢管厚度：</label>
                 <select id="widePipeThickness">
-                    <option value="1.2">1.2mm</option>
-                    <option value="1.5">1.5mm</option>
-                    <option value="1.7">1.7mm</option>
-                    <option value="2.0">2.0mm</option>
+                    <option value="0.65">1.2mm</option>
+                    <option value="0.8">1.5mm</option>
+                    <option value="0.92">1.7mm</option>
+                    <option value="1.1">2.0mm</option>
                 </select><br>
 
         </div>
@@ -173,7 +173,7 @@
 
     <!-- 钢管单价输入框（默认隐藏） -->
     <div id="pipePriceField" style="display: none;">
-        <label for="pipePrice">钢管单价 (元/米)：</label>
+        <label for="pipePrice">钢管单价 (元/kg)：</label>
         <input type="number" id="pipePrice" placeholder="请输入钢管单价"><br>
     </div>
 
@@ -235,8 +235,8 @@
             }
 
             // 计算钢管价格
-            const longPipeTotalWeight = longPipeLength/1000 * longPipeQuantity * (longPipeThickness * 0.65);
-            const widePipeTotalWeight = widePipeLength/1000 * widePipeQuantity * (widePipeThickness * 0.65);
+            const longPipeTotalWeight = longPipeLength/1000 * longPipeQuantity * longPipeThickness;
+            const widePipeTotalWeight = widePipeLength/1000 * widePipeQuantity * widePipeThickness;
             const pipeTotalWeight = longPipeTotalWeight + widePipeTotalWeight;
             const pipeTotalPrice = pipeTotalWeight * pipePrice;
 
