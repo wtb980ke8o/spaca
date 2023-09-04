@@ -237,6 +237,7 @@
             // 计算钢管价格
             const longPipeTotalWeight = longPipeLength/1000 * longPipeQuantity * longPipeThickness;
             const widePipeTotalWeight = widePipeLength/1000 * widePipeQuantity * widePipeThickness;
+	    console.log(longPipeThickness+"/"+widePipeThickness);
             const pipeTotalWeight = longPipeTotalWeight + widePipeTotalWeight;
             const pipeTotalPrice = pipeTotalWeight * pipePrice;
 
